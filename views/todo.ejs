@@ -1,0 +1,98 @@
+<html>
+    <head>
+       <title>
+           <%= title %>
+           </title>
+           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/todo.css">
+    </head>
+    <body>
+            <!-- Main Div Container -->
+    <div id="main">
+
+        <br>
+
+        <!-- Web App Heading -->
+        <h1 id="app-heading">TODO App</h1>
+
+        <!-- Form to input task from user -->
+        <form action="/create-todo" method="POST">
+        <div id="description-container">
+            <p id="description-heading">DESCRIPTION</p>
+            <input type="text" id="form-description" name="description" placeholder="what do you need to do?" required>
+        </div>
+
+        <div class="category-date-container">
+          
+            <div id="category-container">
+                <p id="category-heading">CATEGORY</p>
+                <p id="choose-category">Choose category</p>
+                <select name="category">
+                    <option style="display: none;"></option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div id="due-date-container">
+                    <p>DUE DATE</p>
+                    <input type="date" id="date-input-box" name="date" placeholder="" required>
+                    </div>
+        </div>
+
+        <div class="buttons-container">
+            <div>
+                <button type="sumbit" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i>ADD TASK</button>
+                </div>
+                &nbsp;
+
+                <div>
+                    <!-- <button type="sumbit" class="delete-button"><i class="fa fa-trash" aria-hidden="true" form="delete1"></i>DELETE TASK</button> -->
+                    <button type="submit" class="delete-button" form="delete1">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        &nbsp;&nbsp; DELETE TASKS
+                    </button>    
+                </div>
+
+            </div>
+
+            </form>
+
+            <form id="delete1" action="/delete-todo" method="POST">
+              <% for(let i of todo_list) {%>
+               
+                <div id="task">
+                    <input type="checkbox" id="check-box" name=task value="<%= i._id %>">
+                   <div class="task-container">
+                       <span id="task-description">
+                           <%= i.description %>
+                       </span>
+                       <br>
+                       <span id="task-date">
+                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                           <%= i.date %>
+                           </span>
+                       </div>
+
+                       <div id="task-category">
+                           <%= i.category %>
+                           </div>
+                           <div id="remove-task-icon">
+                            <a href="/delete_todo_single/?id=<%= i._id %>">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+              <%}%>
+                </form>
+
+
+        </div>
+  </body>
+</html>
