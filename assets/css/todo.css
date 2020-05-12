@@ -1,19 +1,18 @@
-body {
-
+body 
+{
     background-image: url("/images/1336126.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-image: url("/images/thumb.jpg"); */
+   
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Main/Parent container */
 #main 
 {
-    width: 55%;
+    width: 50%;
     height: auto;
     background: white;
     margin: auto;
@@ -24,7 +23,6 @@ body {
 }
 
 
-/* Heading of TODO Web App*/
 #app-heading
  {
     text-align: center;
@@ -35,7 +33,8 @@ body {
     margin: 10px;
     animation:myAnimation 2s ease-in-out alternate infinite;
 }
-@keyframes myAnimation{
+@keyframes myAnimation
+{
     0%{
         color:brown;
         text-shadow: 0px 0px 0px white;
@@ -46,10 +45,8 @@ body {
     }
 }
 
-/**** Form to create task *****/
-
-/* Task Decription in form */
-#description-container {
+#description-container
+ {
     width: auto;
     border-top: 1px solid #d7d7d7;
     border-bottom: 1px solid #d7d7d7;
@@ -57,25 +54,29 @@ body {
     padding-bottom: 10px;
     padding-left: 5px;
 }
-#description-container:hover{
+#description-container:hover
+{
     border-left: 5px solid #5DADE2;
     border-right: 5px solid #5DADE2;
     background-color:#F6DDCC;
 }
 
-#description-container p, #due-date-container p, #category-container p {
+#description-container p, #due-date-container p, #category-container p 
+{
     font-size: 1.1rem;
     font-family: Cambria, 'Times New Roman', serif;
 }
 
-#description-container p {
+#description-container p 
+{
     padding-left: 5px;
     color: #AF7AC5;
     font-weight: bold;
 }
 
 
-#form-description {
+#form-description 
+{
     width: 50%;
     border: 0px;
     background-color: transparent;
@@ -86,40 +87,42 @@ body {
     color:black;
     font-weight: 500;
 }
-  input:focus,select:focus{
+  input:focus,select:focus
+  {
     outline: none;
-}
+  }
 
-/* Category and Date container of form */
 
-.category-date-container {
+.category-date-container
+ {
     padding-top: 0px;
     background-color:#D7BDE2;
     display: flex;
 }
-.category-date-container:hover{
+.category-date-container:hover
+{
     background-color: #D4E6F1;
     border-left: 5px solid red;
     border-right: 5px solid red;
 }
 
 
-#category-heading {
+#category-heading
+ {
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-#choose-category {
+#choose-category
+ {
     font-weight: 400;
     color:gray;
     display: inline;
 
 }
 
-/* Dropdown menu: */
-select {
-    /* width: 70%; */
-    /* width: 100%; */
+select 
+{
     color:#34495E;
     font-weight: 400;
     border: 0;
@@ -129,9 +132,6 @@ select {
     opacity: 0.6;
     font-family: Cambria, 'Times New Roman', serif;
 }
-
-
-
 
 #due-date-container {
     width: 50%;
@@ -162,8 +162,6 @@ select {
 }
 
 
-/**** Buttons Container  ****/
-
 .buttons-container {
     background-color:#FDEDEC ;
     display: flex;
@@ -178,7 +176,7 @@ select {
     border-right: 5px solid yellow;
 }
 
-/* Add task Button */
+
 .add-button {
     background-color: #464646;
     color: white;
@@ -190,7 +188,6 @@ select {
     margin-right: 20px;
 }
 
-/* Delete tasks Button */
 .delete-button {
     background-color: #ed3824;
     color: white;
@@ -201,7 +198,6 @@ select {
     margin-right: 3px;
 }
 
-/* Button's Hover Properties */
 
 .add-button:hover {
     background: #101010;
@@ -213,10 +209,7 @@ select {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/***** TODO List or Task List *****/
 
-
-/* THIS IS CHANGE COLOR EVEN NUMBERED OF TAKS LIST */
 #task {
     flex: 0 0 50px;
     display: flex;
@@ -225,50 +218,35 @@ select {
     border-bottom: 1px solid rgba(0, 0, 0, 0.226);
     padding-bottom: 10px;
     padding-top: 15px;
-     background-color: #f2f2f2; ;
+     background-color: #f2f2f2; 
 }
 
 
-#task:nth-child(2n):hover{
-    background-color: #E5E8E8 ; 
+#task:nth-child(even):hover{
+   
     border-left: 5px solid springgreen;
     border-right: 5px solid springgreen;
+    background-color: #A9CCE3;
 }
-#task:nth-child(n):hover{
-    background-color: #E5E8E8 ; 
+#task:nth-child(odd):hover{
+    
     border-left: 5px solid orange;
     border-right: 5px solid orange;
+    background-color: #CDF8F8;
 }
 
-
-/* THIS IS CHANGE COLOR ODD NUMBERED OF TAKS LIST */
-
-
-/* Various hover mouse effects  */
-#task:hover, .category-date-container:hover, #description-container:hover {
-    background-color: #e1e1e1;
-}
-
-/* Div containing all tasks in the database  */ 
 .show {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* background-color: red; */
-    /* height: 180px; */
-    /* overflow-x: scroll; */
-}
-
-/*** Flex box of each task ***/
-
-
-
-/* CATEGORY BOX of task list */
+ 
+ }  
 #task-category {
     background-color: #f1a500;
     color: aliceblue;
-    height: 18px;
-    width: 70px;
+    height: 20px;
+    width: 80px;
+    margin-left: 30px;
     padding: 10px;
     font-size: 0.8rem;
     text-align: center;    
@@ -277,32 +255,21 @@ select {
     box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/* Task Description in TODO list */
 #task-description {
-    color: #565656;
-    font-size: 1.1rem;
+    color: #2E86C1;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-/* Task Due Date in TODO list */
 #task-date {
-    color: rgb(157, 159, 160);
-    font-size: 0.8rem;
+ 
+    color:#85929E;
+    font-size: 0.9rem;
+    padding-top: 2px;
 }
 
-/* Checkbox */
 #check-box {
     outline: 2px solid #525252;
     color: blueviolet;
     margin-top: 10px;
-}
-
-
-
-#remove-task-icon {
-    font-size: 1.3rem;
-    padding: 10px;
-}
-
-#remove-task-icon a {
-    color: red;
 }

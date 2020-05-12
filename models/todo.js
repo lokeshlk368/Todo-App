@@ -1,17 +1,18 @@
 const mongoose=require('mongoose');
 const todoSchema=new mongoose.Schema({
-    // description:"lojesju",
-    // category:"dfsdfsdfsd",
-    // date:'2020-04-4'
-    description:{
+   
+    description:
+    {
         type:String,
         require:true
     },
-    category:{
+    category:
+    {
         type:String,
         require:true
     },
-    date:{
+    date:
+    {
         type:Date,
         require:true
     }
